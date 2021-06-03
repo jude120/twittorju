@@ -1,13 +1,13 @@
 
 var url = window.location.href;
-var swLocstion ='twittorju/sw.js';
+var swLocstion ='/twittorju/sw.js';
 
 if (navigator.serviceWorker) {
     if (url.includes('localhost')) {
-        navigator.serviceWorker.register('/sw.js');
-    }else{
-        navigator.serviceWorker.register(swLocstion);
+       swLocstion ='/sw.js';
     }
+    navigator.serviceWorker.register(swLocstion);
+
 }
 
 // Referencias de jQuery
