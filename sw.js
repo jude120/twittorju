@@ -2,7 +2,7 @@
 importScripts('js/sw-utils.js');
 
 const static_cache ='static_v3';
-const dinamic_cache ='dinamic_v1';
+const dinamic_cache ='dinamic_v2';
 const inmutable_cache ='inmutable_v1';
 const dinamic_limit =50;
 const App_shell=[
@@ -39,6 +39,9 @@ self.addEventListener('activate',e=>{
     const respuesta = caches.keys().then(keys=>{
         keys.forEach(key =>{
             if (key !== static_cache && key.includes('static')) {
+                return caches.delete(key);
+            }
+            if (key !== dinamic_cache && key.includes('dinamic')) {
                 return caches.delete(key);
             }
         })
