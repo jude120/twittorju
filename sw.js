@@ -1,7 +1,7 @@
 //imports 
 importScripts('js/sw-utils.js');
 
-const static_cache ='static_v2';
+const static_cache ='static_v3';
 const dinamic_cache ='dinamic_v1';
 const inmutable_cache ='inmutable_v1';
 const dinamic_limit =50;
