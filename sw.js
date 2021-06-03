@@ -7,7 +7,7 @@ const inmutable_cache ='inmutable_v1';
 const dinamic_limit =50;
 const App_shell=[
    // '/',
-    '/index.html',
+    'index.html',
     'css/style.css',
     'img/favicon.ico',
     'img/avatars/hulk.jpg',
