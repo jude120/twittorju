@@ -26,8 +26,12 @@ const App_sell_inmutable=[
 ];
 
 self.addEventListener('install',e=>{
-    const cachestatic = caches.open(static_cache).then(cache=>cache.addAll(App_shell));
-    const cacheinmutable = caches.open(inmutable_cache).then(cache=>cache.addAll(App_sell_inmutable));
+    const cachestatic = caches.open(static_cache).then(cache=>{
+        return cache.addAll(App_shell);
+    });
+    const cacheinmutable = caches.open(inmutable_cache).then(cache=>{
+        return cache.addAll(App_sell_inmutable);
+    });
     e.waitUntil(Promise.all([cachestatic,cacheinmutable]));
 });
 
